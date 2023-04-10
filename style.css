@@ -1,0 +1,154 @@
+#calculator {
+  max-width: 1200px;
+  margin: 0 auto;
+  }
+  
+  .bg-gray-light {
+  background-color: #f1f1f1;
+  }
+  
+  .border {
+  border: 1px solid #e2e2e2;
+  }
+  
+  .border-gray {
+  border-color: #e2e2e2;
+  }
+  
+  .p-6 {
+  padding: 24px;
+  }
+  
+  .mb-4 {
+  margin-bottom: 16px;
+  }
+  
+  .display-grid {
+  display: grid;
+  }
+  
+  .grid-cols-1 {
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  
+  .md\:grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  
+  .md\:gap-6 {
+  gap: 24px;
+  }
+  
+  .pb-4 {
+  padding-bottom: 16px;
+  }
+  
+  .FormControl {
+  display: flex;
+  align-items: center;
+  position: relative;
+  }
+  
+  .FormControl--withLeftIcon {
+  position: relative;
+  
+  }
+  
+  .FormLabel {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  }
+  
+  .float-left {
+  float: left;
+  }
+  
+  .FormInput {
+  height: 40px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  width: 50%;
+  box-sizing: border-box;
+  margin-right: 0;
+  margin-left: auto;
+  }
+  
+  .type-body-one {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #555;
+  }
+  
+  .font-circular-bold {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 700;
+  }
+  
+  #new-house-calculator input[type="number"]::-webkit-inner-spin-button,
+  #new-house-calculator input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+  
+  /* #new-house-calculator input[type="number"] {
+  -moz-appearance: textfield;
+  } */
+  
+  body {
+  font-family: 'Ubuntu', sans-serif;
+  }
+  
+  h5 {
+  font-size: 1.5em !important;
+  }
+  
+  .FormControl--withLeftIcon:before {
+  color: #151515;
+  content: attr(data-format);
+  font-family: CircularStd-Book,Arial,sans-serif;
+  font-size: 1rem;
+  left: 17.9rem;
+  line-height: 1.75;
+  position: absolute;
+  /*bottom: 0.675em;*/
+  }
+  
+  .FormControl--withLeftIcon .FormInput {
+  padding-left: 1.5625rem;
+  }
+  
+  .FormControl--withRightIcon:after {
+  color: #151515;
+  content: attr(data-format);
+  font-family: CircularStd-Book,Arial,sans-serif;
+  font-size: 1rem;
+  line-height: 1.15;
+  position: absolute;
+  right: 1rem;
+  bottom: 0.675em;
+  }
+  
+  #wages-error-message, #investments-error-message, #alimony-error-message, #other-income-error-message, #downpayment-error-message, #real-estate-error-message, #interest-rate-error-message, #loan-term-error-message, #insurance-error-message, #car-payment-error-message, #credit-card-payment-error-message, #alimony-payment-error-message, #other-debts-error-message {
+  float: right;
+  color: red;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  }
+  
+  #wages.error, #investments.error, #alimonyIncome.error, #otherIncome.error, #downPayment.error, #realEstateTaxes.error, #interestRate.error, #loanTerm.error, #homeownerInsurance.error, #carPayment.error, #creditCardPayment.error, #alimonyPaid.error, #otherDebtPayment.error {
+  border: 2px solid red;
+  }
+
+  .error-message {
+    color: red;
+  }
+  
+  input:focus {
+  outline: none;
+  }

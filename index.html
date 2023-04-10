@@ -1,0 +1,456 @@
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Calculator</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style src="style.css"></style>
+    <link rel="stylesheet" href="style.css">
+  
+  </head>
+  <body>
+    <div class="calculator">
+      <div id="calculator">
+        <div id="new-house-calculator">
+          <div class="bg-gray-light border border-gray p-6">
+            <h5 class="mb-4">Gross monthly income</h5>
+            <div class="display-grid grid-cols-1 md:grid-cols-2 md:gap-6">
+              <div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="wages"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left">Wages</span>
+                      <!----></label
+                    >
+  
+                    <input
+                      value="8,000"
+                      data-v-c187760c=""
+                      id="wages"
+                      name="wages"
+                      step="any"
+                      class="FormInput dollarSign currency"
+                    />
+                  </div>
+                  <div id="wages-error-message"></div>
+                  <!---->
+                </div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="alimonyIncome"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Alimony received</span
+                      >
+                      <!----></label
+                    >
+  
+                    <input
+                      value="0"
+                      data-v-c187760c=""
+                      id="alimonyIncome"
+                      name="alimonyIncome"
+                      step="any"
+                      class="FormInput currency"
+                    />
+                  </div>
+                  <div id="alimony-error-message"></div>
+                  <!---->
+                </div>
+              </div>
+              <div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="investments"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Investments / Dividends</span
+                      >
+                      <!----></label
+                    >
+  
+                    <input
+                      value="0"
+                      data-v-c187760c=""
+                      id="investments"
+                      name="investments"
+                      class="FormInput dollarSign currency"
+                    />
+                  </div>
+                  <div id="investments-error-message"></div>
+                  <!---->
+                </div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="otherIncome"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left">Other</span>
+                      <!----></label
+                    >
+  
+                    <input
+                      value="0"
+                      data-v-c187760c=""
+                      id="otherIncome"
+                      name="otherIncome"
+                      step="any"
+                      class="FormInput dollarSign currency"
+                    />
+                  </div>
+                  <div id="other-income-error-message"></div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <p class="type-body-one">
+              Total monthly income: 
+              <span class="font-circular-bold" id="total-monthly-income-value"></span>
+            </p>
+            <h5 class="mb-4">New home info</h5>
+            <div class="display-grid grid-cols-1 md:grid-cols-2 md:gap-6">
+              <div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="downPayment"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Down payment</span
+                      >
+                      <!----></label
+                    >
+  
+                    <input
+                      value="20,000"
+                      data-v-c187760c=""
+                      id="downPayment"
+                      name="downPayment"
+                      step="any"
+                      class="FormInput currency"
+                    />
+                  </div>
+                  <div id="downpayment-error-message"></div>
+                  <!---->
+                </div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="realEstateTaxes"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Yearly real estate taxes</span
+                      >
+                      <!----></label
+                    >
+  
+                    <input
+                      value="2,500"
+                      data-v-c187760c=""
+                      id="realEstateTaxes"
+                      name="realEstateTaxes"
+                      step="any"
+                      class="FormInput currency"
+                    />
+                  </div>
+                  <div id="real-estate-error-message"></div>
+                  <!---->
+                </div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="%"
+                    class="FormControl FormControl--withRightIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="interestRate"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Interest rate*</span
+                      >
+                      <!----></label
+                    >
+  
+                    <input
+                      value="4"
+                      data-v-c187760c=""
+                      id="interestRate"
+                      name="interestRate"
+                      class="FormInput"
+                      min="1"
+                      max="10"
+                    />
+                  </div>
+                  <div id="interest-rate-error-message"></div>
+                  <!---->
+                </div>
+              </div>
+              <div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="years"
+                    class="FormControl FormControl--withRightIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="loanTerm"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Loan term*</span
+                      >
+                      <!----></label
+                    >
+                    <input
+                      value="30"
+                      data-v-c187760c=""
+                      id="loanTerm"
+                      name="loanTerm"
+                      class="FormInput"
+                      required
+                    />
+                  </div>
+                  <div id="loan-term-error-message"></div>
+                  <!---->
+                </div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="homeownerInsurance"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Yearly homeowner's insurance</span
+                      >
+                      <!----></label
+                    >
+                    <input
+                      value="1,900"
+                      data-v-c187760c=""
+                      id="homeownerInsurance"
+                      name="homeownerInsurance"
+                      class="FormInput currency"
+                      step="any"
+                    />
+                  </div>
+                  <div id="insurance-error-message"></div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <h5 class="mt-8 mb-4">Monthly debts</h5>
+            <div class="display-grid grid-cols-1 md:grid-cols-2 md:gap-6">
+              <div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="carPayment"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Car payment</span
+                      >
+                      <!----></label
+                    >
+                    <input
+                      value="0"
+                      data-v-c187760c=""
+                      id="carPayment"
+                      name="carPayment"
+                      class="FormInput currency"
+                      step="any"
+                    />
+                  </div>
+                  <div id="car-payment-error-message"></div>
+                  <!---->
+                </div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="creditCardPayment"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Credit card debt payments</span
+                      >
+                      <!----></label
+                    >
+                    <input
+                      value="0"
+                      data-v-c187760c=""
+                      id="creditCardPayment"
+                      name="creditCardPayment"
+                      class="FormInput currency"
+                      step="any"
+                    />
+                  </div>
+                  <div id="credit-card-payment-error-message"></div>
+                  <!---->
+                </div>
+              </div>
+              <div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="alimonyPaid"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Alimony paid</span
+                      >
+                      <!----></label
+                    >
+                    <input
+                      value="0"
+                      data-v-c187760c=""
+                      id="alimonyPaid"
+                      name="alimonyPaid"
+                      class="FormInput currency"
+                      step="any"
+                    />
+                  </div>
+                  <div id="alimony-payment-error-message"></div>
+                  <!---->
+                </div>
+                <div data-v-c187760c="" class="pb-4">
+                  <div
+                    data-v-c187760c=""
+                    data-format="$"
+                    class="FormControl FormControl--withLeftIcon"
+                    style="clear: both"
+                  >
+                    <label
+                      data-v-c187760c=""
+                      data-tool-tip="showInfoIcon"
+                      for="otherDebtPayment"
+                      class="FormLabel"
+                      ><span data-v-c187760c="" class="float-left"
+                        >Other debts</span
+                      >
+                      <!----></label
+                    >
+                    <input
+                      value="0"
+                      data-v-c187760c=""
+                      id="otherDebtPayment"
+                      name="otherDebtPayment"
+                      class="FormInput currency"
+                      step="any"
+                    />
+                  </div>
+                  <div id="other-debts-error-message"></div>
+                  <!---->
+                </div>
+              </div>
+            </div>
+            <p
+              class="display-flex md:display-block justify-content-space-between"
+            >
+              <span class="leading-5 mr-8 md:mr-4"
+                >Total monthly debts and housing expenses (including insurance
+                and real estate payments):</span
+              >
+              <span class="font-circular-bold monthlyTotal"></span>
+            </p>
+            <div class="text-center">
+              <button class="Button Button--primary" id="calculateButton">
+                CALCULATE
+              </button>
+            </div>
+          </div>
+          <div
+            class="bg-white border border-gray p-6"
+            id="endResult"
+            style="display: none"
+          >
+            <p class="disposable-income"></p>
+            <p class="debt-to-income-ratio"></p>
+            <p class="max-monthly-mortgage"></p>
+            <p class="max-house-price"></p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  <script src="script.js">
+  
+  </script>
+  </body>  
